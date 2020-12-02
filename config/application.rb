@@ -1,5 +1,5 @@
 require_relative 'boot'
-require 'letter_opener' if Rails.env.development?
+require 'letter_opener'
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
