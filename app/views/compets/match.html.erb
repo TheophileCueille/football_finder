@@ -1,0 +1,33 @@
+
+<div class ="container">
+<h2>Les matches</h2>
+
+
+<table class ="table table-bordered shadow p-3 mb-5 bg-white rounded">
+<thead>
+    <tr> 
+        <td>Date</td>
+        <td>Status</td>
+        <td>Owner</td>
+        <td>Score</td>
+        <td>Guest</td>
+        <td>To define<td>
+    </tr>
+</thead>
+<tbody>        
+    <%@matchs["matches"].each do |m|%>
+        <tr>
+            <td><%=m["season"]["startDate"]%></td>
+            <td><%=m["status"]%></td>
+            <td><%=m["homeTeam"]["name"]%></td>
+            <td>
+            <%= "#{m["score"]["fullTime"]["homeTeam"]} / #{m["score"]["fullTime"]["awayTeam"]}"%>
+            </td>
+            <td><%=m["awayTeam"]["name"]%></td>
+            <td><%=m["season"]["endDate"]%></td>
+        </tr>
+    <%end%>
+
+</table>
+
+</div>
