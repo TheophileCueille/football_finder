@@ -8,4 +8,9 @@ class CompetsController < ApplicationController
     def teams
         @teams = FootballData::Competition.new.team
     end
+
+    def standing
+
+        @standing = FootballData::Competition.new.standing
+    end
 end
