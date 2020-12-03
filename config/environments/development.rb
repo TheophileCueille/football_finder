@@ -12,12 +12,21 @@ Rails.application.configure do
   # Show full error reports.
   config.consider_all_requests_local = true
   #config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }#devise
-  config.action_mailer.default_url_options = { :host => 'https://foot-develop.herokuapp.com/'}
+  config.action_mailer.default_url_options = { :host => 'https://foot-develop.herokuapp.com'}
   #letter opener
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.perform_caching = false
+  config.action_mailer.smtp_settings = {
+    :user_name => ENV['SENDGRID_USERNAME'],
+    :password => ENV['SENDGRID_PASSWORD'],
+    :domain => 'yourdomain.com',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
