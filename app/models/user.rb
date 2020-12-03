@@ -6,4 +6,10 @@ class User < ApplicationRecord
 
          has_one_attached :avatar
          validates_presence_of :firstname, :lastname
+
+  after_create :welcome_send
+
+  def welcome_send
+    UserMailer.welcome_email(self).deliver_now
+  end
 end

@@ -55,7 +55,8 @@ Rails.application.configure do
 
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
-  config.action_mailer.default_url_options = { :host => 'https://foot-production.herokuapp.com/'}
+  config.action_mailer.default_url_options = { :host => 'https://foot-production.herokuapp.com'}
+  #config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
 
@@ -64,10 +65,21 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "football_finder_#{Rails.env}"
 
   config.action_mailer.perform_caching = false
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
+
   config.action_mailer.raise_delivery_errors = false
  
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.smtp_settings = {
+    :user_name => ENV['SENDGRID_USERNAME'],
+    :password => ENV['SENDGRID_PASSWORD'],
+    :domain => 'yourdomain.com',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
