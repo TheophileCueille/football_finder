@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root 'home#index'
   get '/secret', to: 'home#secret'
   devise_for :users
@@ -9,6 +8,7 @@ Rails.application.routes.draw do
   get 'match', to: "compets#match"
   get 'standing', to: "compets#standing"
   get '/team/:id', to: 'compets#show'
-
-  
+  get 'orders/new'
+  get 'orders/create'
+  resources :orders, only: [:new, :create]
 end
