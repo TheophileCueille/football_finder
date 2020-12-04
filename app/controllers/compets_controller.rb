@@ -20,6 +20,9 @@ class CompetsController < ApplicationController
     def show
         @options = { headers: { "X-Auth-Token" => "acc141a28a57413888dd75eab9a28c57" } }
         @teams = self.class.get("/teams/#{params[:id]}", @options)
-
+        elf = teams.select { |n| n["id"]=params[:id] }
+        elo = elf[0]["address"]
+        binding.pry
+        @result = Geocoder.search(elo).first.coordinates
     end
 end
