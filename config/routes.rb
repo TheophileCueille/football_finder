@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   get 'teams', to: "compets#teams"
   get 'match', to: "compets#match"
   get 'standing', to: "compets#standing"
+  get '/team/:id', to: 'compets#show'
+
   
 end
