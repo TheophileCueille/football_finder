@@ -4,6 +4,7 @@ class OrdersController < ApplicationController
 
   def create
     # Before the rescue, at the beginning of the method
+<<<<<<< HEAD
   # @user = User.current_user
   # @product = Product.first
   # @amount = @product.price
