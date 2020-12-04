@@ -1,5 +1,6 @@
 module FootballData
   class Competition < Base
+    
 
     def match
       response = self.class.get('/competitions/2015/matches/', @options)
@@ -17,9 +18,22 @@ module FootballData
 
     end
 
+
+  def show
+    response = self.class.get("/teams/#{@id}", @options)
+  puts "*" *30
+    @id
+  puts "*" *30
+
+
+
+  end
+
+
   end
 end
 
 #FootballData::Competition.new.match
 #FootballData::Competition.new.team
 #FootballData::Competition.new.standing
+#FootballData::Competition.new.show
