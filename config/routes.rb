@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get 'orders/new'
   get 'orders/create'
   resources :orders, only: [:new, :create]
+
 end

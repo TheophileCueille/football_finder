@@ -69,4 +69,5 @@ gem 'pry'
 gem 'httparty'
 gem 'devise'
 gem 'stripe'
-gem 'table_print' 
+gem 'table_print'
+
