@@ -1,0 +1,35 @@
+<div class="container"> 
+
+<h1>Standing</h1>
+
+<table class ="table table-bordered shadow p-3 mb-5 bg-white rounded">
+    <thead>
+        <tr> 
+            <th scope="col">Position</th>
+            <th scope="col">Team</th>
+            <th scope="col">Games</th>
+            <th scope="col">For</th>
+            <th scope="col">Against</th>
+            <th scope="col">+/-</th>
+            <th scope="col">Pts</th>
+        </tr>
+    </thead>
+    <tbody>        
+        <%@standing[0]["table"].each do |stand|%>
+            <tr>
+                <td><%=stand["position"]%></td>
+                <td>
+                <%=image_tag stand["team"]["crestUrl"] , size: "50x50"%>
+                <%=stand["team"]["name"]%>
+                </td>
+                <td><%=stand["playedGames"]%></td>
+                <td><%=stand["goalsFor"]%></td>
+                <td><%=stand["won"]%></td>
+                <td><%=stand["goalDifference"]%></td>
+                <td><%=stand["points"]%></td>
+            </tr>
+        <%end%>
+    </tbody>
+</table>
+
+</div>

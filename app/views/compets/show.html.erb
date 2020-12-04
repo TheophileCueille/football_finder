@@ -1,0 +1,87 @@
+<div class="container"> 
+        <h2 class ="m-2"><%=@teams["name"]%></h1>
+
+    <div class="row mx-0">
+        <div class ="col-sm-4 d-flex justify-content-center mb-2">
+        <%=image_tag @teams["crestUrl"] , size: "300x300"%>
+        </div>
+    <div class="col-sm-8">
+        <div class="card rounded-0 box-shadow">
+            <div class ="card-body">
+                <div class="row">
+                    <div class="col-md-6 my-1 ng-star-inserted">
+                        <div class="card rounded-0">
+                            <div class="card-header bg-lightgrey" style="padding: 0.3rem;">Name</div>
+                            <div class="card-body" style="padding: 0.4rem"><%=@teams["name"]%></div>
+                        </div>
+                    
+                    </div>
+                    <div class="col-md-6 my-1 ng-star-inserted">
+                        <div class="card rounded-0">
+                            <div class="card-header bg-lightgrey" style="padding: 0.3rem;">Phone</div>
+                            <div class="card-body" style="padding: 0.4rem"><%=@teams["phone"]%></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 my-1 ng-star-inserted">
+                        <div class="card rounded-0">
+                            <div class="card-header bg-lightgrey" style="padding: 0.3rem;">Website</div>
+                            <div class="card-body" style="padding: 0.4rem"><%=@teams["website"]%></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 my-1 ng-star-inserted">
+                        <div class="card rounded-0">
+                            <div class="card-header bg-lightgrey" style="padding: 0.3rem;">Short Name</div>
+                            <div class="card-body" style="padding: 0.4rem"><%=@teams["shortName"]%></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 my-1 ng-star-inserted">
+                        <div class="card rounded-0">
+                            <div class="card-header bg-lightgrey" style="padding: 0.3rem;">Address</div>
+                            <div class="card-body" style="padding: 0.4rem"><%=@teams["address"]%></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 my-1 ng-star-inserted">
+                        <div class="card rounded-0">
+                            <div class="card-header bg-lightgrey" style="padding: 0.3rem;">Email</div>
+                            <div class="card-body" style="padding: 0.4rem"><%=@teams["email"]%></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <h5 class="m-2">Active Competitions</h5>
+    <div class="d-flex flex-column align-items-center mb-4">
+        <table class ="table table-bordered shadow p-3 mb-5 bg-white rounded">
+            <thead>
+                <tr class ="text-center">
+                    <th scope="col">Competition</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">Code</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><%=@teams["activeCompetitions"][0]["name"]%></td>
+                    <td><%=@teams["activeCompetitions"][0]["area"]["name"]%></td>
+                    <td><%=@teams["activeCompetitions"][0]["code"]%></td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
+
+<!--
+    @teams["name"]
+    @teams["phone"]
+    @teams["website"]
+    @teams["shortName"]
+    @teams["email"]
+    @teams["address"]
+    @teams["crestUrl"]
+    @teams["activeCompetitions"][0]["name"]
+    @teams["activeCompetitions"][0]["code"]
+    @teams["activeCompetitions"][0]["area"]["name"]
+-->
