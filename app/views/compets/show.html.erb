@@ -73,38 +73,17 @@
     </div>
 </div>
 
-
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVNSgEW649O4RX2Twf6_B8Yxc6EP1tX0o&callback=initMap&libraries=&v=weekly"
-      defer
-    ></script>
-    <style type="text/css">
-      #map {
-        height: 600px;
-        width: 60%;
-      }
-    </style>
+<% provide :head_tags do %>
     <script>
-
-function initMap() {
-  const location = { lat: <%=@new_address[:latitude]%>, lng: <%=@new_address[:longitude]%> };
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 9,
-    center: location,
-  });
-  const marker = new google.maps.Marker({
-    position: location,
-    map,
-  });
-   marker.addListener("click", () => {
-open("https://www.psg.fr/club/parc-des-princes");
-  });
-}
-
-
+    document.addEventListener("DOMContentLoaded", function(){
+        initMap(<%=@new_address[:latitude]%>, <%=@new_address[:longitude]%>)
+    });
     </script>
+<% end %>
 
+<p>
     <div id="map"></div>
+</p>
 
 <!--
     @teams["name"]
