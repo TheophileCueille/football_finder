@@ -1,9 +1,9 @@
 <div class="container"> 
-        <h2 class ="m-2"><%=@teams["name"]%></h1>
+        <h2 class ="m-2"><%=@teams_show["name"]%></h1>
 
     <div class="row mx-0">
         <div class ="col-sm-4 d-flex justify-content-center mb-2">
-        <%=image_tag @teams["crestUrl"] , size: "300x300"%>
+        <%=image_tag @teams_show["crestUrl"] , size: "300x300"%>
         </div>
     <div class="col-sm-8">
         <div class="card rounded-0 box-shadow">
@@ -12,38 +12,38 @@
                     <div class="col-md-6 my-1 ng-star-inserted">
                         <div class="card rounded-0">
                             <div class="card-header bg-lightgrey" style="padding: 0.3rem;">Name</div>
-                            <div class="card-body" style="padding: 0.4rem"><%=@teams["name"]%></div>
+                            <div class="card-body" style="padding: 0.4rem"><%=@teams_show["name"]%></div>
                         </div>
                     
                     </div>
                     <div class="col-md-6 my-1 ng-star-inserted">
                         <div class="card rounded-0">
                             <div class="card-header bg-lightgrey" style="padding: 0.3rem;">Phone</div>
-                            <div class="card-body" style="padding: 0.4rem"><%=@teams["phone"]%></div>
+                            <div class="card-body" style="padding: 0.4rem"><%=@teams_show["phone"]%></div>
                         </div>
                     </div>
                     <div class="col-md-6 my-1 ng-star-inserted">
                         <div class="card rounded-0">
                             <div class="card-header bg-lightgrey" style="padding: 0.3rem;">Website</div>
-                            <div class="card-body" style="padding: 0.4rem"><%=@teams["website"]%></div>
+                            <div class="card-body" style="padding: 0.4rem"><%=@teams_show["website"]%></div>
                         </div>
                     </div>
                     <div class="col-md-6 my-1 ng-star-inserted">
                         <div class="card rounded-0">
                             <div class="card-header bg-lightgrey" style="padding: 0.3rem;">Short Name</div>
-                            <div class="card-body" style="padding: 0.4rem"><%=@teams["shortName"]%></div>
+                            <div class="card-body" style="padding: 0.4rem"><%=@teams_show["shortName"]%></div>
                         </div>
                     </div>
                     <div class="col-md-6 my-1 ng-star-inserted">
                         <div class="card rounded-0">
                             <div class="card-header bg-lightgrey" style="padding: 0.3rem;">Address</div>
-                            <div class="card-body" style="padding: 0.4rem"><%=@teams["address"]%></div>
+                            <div class="card-body" style="padding: 0.4rem"><%=@teams_show["address"]%></div>
                         </div>
                     </div>
                     <div class="col-md-6 my-1 ng-star-inserted">
                         <div class="card rounded-0">
                             <div class="card-header bg-lightgrey" style="padding: 0.3rem;">Email</div>
-                            <div class="card-body" style="padding: 0.4rem"><%=@teams["email"]%></div>
+                            <div class="card-body" style="padding: 0.4rem"><%=@teams_show["email"]%></div>
                         </div>
                     </div>
                 </div>
@@ -62,9 +62,9 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><%=@teams["activeCompetitions"][0]["name"]%></td>
-                    <td><%=@teams["activeCompetitions"][0]["area"]["name"]%></td>
-                    <td><%=@teams["activeCompetitions"][0]["code"]%></td>
+                    <td><%=@teams_show["activeCompetitions"][0]["name"]%></td>
+                    <td><%=@teams_show["activeCompetitions"][0]["area"]["name"]%></td>
+                    <td><%=@teams_show["activeCompetitions"][0]["code"]%></td>
                 </tr>
             </tbody>
 
@@ -73,11 +73,7 @@
     </div>
 </div>
 
-<!--
-<%=@teams["address"]%>
-cordinate = Geocoder.search(@teams["address"]).first.coordinates%>
-cordinate%>
--->
+
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVNSgEW649O4RX2Twf6_B8Yxc6EP1tX0o&callback=initMap&libraries=&v=weekly"
       defer
@@ -91,7 +87,7 @@ cordinate%>
     <script>
 
 function initMap() {
-  const location = { lat: 0, lng: 0 };
+  const location = { lat: <%=@new_address[:latitude]%>, lng: <%=@new_address[:longitude]%> };
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 9,
     center: location,

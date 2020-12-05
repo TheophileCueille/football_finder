@@ -4,7 +4,7 @@ module FootballData
 
     def match
       response = self.class.get('/competitions/2015/matches/', @options)
-     #response['competitions']
+      #response['competitions']
     end
 
     def team
@@ -20,12 +20,6 @@ module FootballData
 
 
   def show
-    response = self.class.get("/teams/#{@id}", @options)
-  puts "*" *30
-    @id
-  puts "*" *30
-
-
 
   end
 
