@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(version: 2020_12_04_111437) do
 
   create_table "compets", force: :cascade do |t|
     t.string "address"
-    t.float "latitude"
-    t.float "longitude"
+    t.decimal "latitude"
+    t.decimal "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

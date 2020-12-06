@@ -71,19 +71,52 @@
         </table>
 
     </div>
+
 </div>
 
-<% provide :head_tags do %>
-    <script>
-    document.addEventListener("DOMContentLoaded", function(){
-        initMap(<%=@new_address[:latitude]%>, <%=@new_address[:longitude]%>)
-    });
-    </script>
-<% end %>
+<div id="map" class="mx-auto" style="width: 100%"></div>
 
-<p>
-    <div id="map"></div>
-</p>
+<!--lat: <%=@new_address[:latitude]%>, lng: <%=@new_address[:longitude]%> -->
+
+
+
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=<%=Rails.application.credentials.google_maps_api_key%>&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <style type="text/css">
+      #map {
+        height: 500px;
+        width: 60%;
+      }
+    </style>
+
+    <script>
+
+function initMap() {
+var location = { lat: <%=@new_address[:latitude]%>, lng: <%=@new_address[:longitude]%> };
+  
+   if(location.lat ==0 && location.lng ==0){
+    var location = { lat: 0, lng: 0 };
+
+   }
+
+
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 14,
+    center: location,
+  });
+  const marker = new google.maps.Marker({
+    position: location,
+    map: map
+
+  });
+   marker.addListener("click", () => {
+open("<%=@teams_show["website"]%>");
+  });
+}
+    </script>
 
 <!--
     @teams["name"]
