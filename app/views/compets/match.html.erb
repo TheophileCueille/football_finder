@@ -1,10 +1,12 @@
 
 <div class ="container">
-<h2>Les matches</h2>
+<br>
+<h1 style="text-align:center">Les matches</h1>
+<br>
 
 
 <table class ="table table-bordered shadow p-3 mb-5 bg-white rounded">
-<thead>
+<thead style="text-align:center">
     <tr class="text-center"> 
         <th scope="col">Date</th>
         <th scope="col">Status</th>
@@ -14,7 +16,7 @@
         <th scope="col">To define</th>
     </tr>
 </thead>
-<tbody>        
+<tbody style="text-align:center">        
     <%@matchs["matches"].each do |m|%>
         <tr>
             <td><%=m["season"]["startDate"]%></td>
