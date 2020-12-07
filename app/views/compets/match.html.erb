@@ -1,35 +1,31 @@
 
 <div class ="container">
-<br>
-<h1 style="text-align:center">Les matches</h1>
-<br>
+<h2>Les matches</h2>
 
 
 <table class ="table table-bordered shadow p-3 mb-5 bg-white rounded">
-<thead style="text-align:center">
+<thead>
     <tr class="text-center"> 
         <th scope="col">Date</th>
         <th scope="col">Status</th>
         <th scope="col">Owner</th>
-        <th scope="col">Score</th>
         <th scope="col">Guest</th>
-        <th scope="col">To define</th>
     </tr>
 </thead>
-<tbody style="text-align:center">        
+<tbody>        
     <%@matchs["matches"].each do |m|%>
         <tr>
-            <td><%=m["season"]["startDate"]%></td>
-            <td><%=m["status"]%></td>
+            <td><%=m['utcDate'].split("T")[0]%></td>
+            <td>COMING SOON</td>
             <td><%=m["homeTeam"]["name"]%></td>
-            <td>
-            <%= "#{m["score"]["fullTime"]["homeTeam"]} / #{m["score"]["fullTime"]["awayTeam"]}"%>
-            </td>
             <td><%=m["awayTeam"]["name"]%></td>
-            <td><%=m["season"]["endDate"]%></td>
         </tr>
     <%end%>
 
 </table>
 
 </div>
+<!--
+['matches'][0]['utcDate'].split("T")[0]
+
+-->
