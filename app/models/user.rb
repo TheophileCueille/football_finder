@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable
 
          has_one_attached :avatar
-         validates_presence_of :firstname, :lastname
+         #validates_presence_of :firstname, :lastname
 
   after_create :welcome_send
 
