@@ -13,6 +13,12 @@
     <%= f.text_field :lastname, autofocus: true, autocomplete: "lastname" %>
   </div>
 
+
+  <div class="field">
+    <%= f.label :adress %><br />
+    <%= f.text_field :adress, autofocus: true, autocomplete: "adress" %>
+  </div>
+
   <div class="field">
     <%= f.label :avatar %><br />
     <%= f.file_field :avatar, accept: "image/png, image/gif, image/jpeg"%>
@@ -47,7 +53,9 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+
+    <%= f.submit "Update"   %>
+     
   </div>
 <% end %>
 
