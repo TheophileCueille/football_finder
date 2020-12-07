@@ -36,6 +36,14 @@ ActiveRecord::Schema.define(version: 2020_12_04_111437) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "compets", force: :cascade do |t|
+    t.string "address"
+    t.decimal "latitude"
+    t.decimal "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "title"
     t.decimal "price"
