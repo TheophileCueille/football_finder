@@ -76,12 +76,13 @@
 
 <div id="map" class="mx-auto" style="width: 100%"></div>
 
-<!--lat: <%=@new_address[:latitude]%>, lng: <%=@new_address[:longitude]%> -->
+<!--lat: <%=@new_address[:latitude]%>, lng: <%=@new_address[:longitude]%> 
+Rails.application.credentials.google_maps_api_key
 
-
+-->
 
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=<%=Rails.application.credentials.google_maps_api_key%>&callback=initMap&libraries=&v=weekly"
+      src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['google_maps_api_key']%>&callback=initMap&libraries=&v=weekly"
       defer
     ></script>
     <style type="text/css">
