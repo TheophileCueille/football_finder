@@ -1,29 +1,27 @@
 <div class ="container">
 <br>
-<h1 style="text-align:center">Teams</h1>
+<h1 style="text-align:center">Les équipes</h1>
 <br>
 
 <p id="adresse"></p>
 
 <table class ="table table-bordered shadow p-3 mb-5 bg-white rounded">
 <thead>
-    <tr class ="text-center"> 
-        <th scope="col">Team</th>
-        <th scope="col">Official Name</th>
-        <th scope="col">Founded</th>
-        <th scope="col">Phone</th>
-        <th scope="col">Adress</th>
-        <th scope="col">Stadium</th>
+    <tr align="center"> 
+        <th id="title">Nom de l'équipe</th>
+        <th id="title">Logo</th>
+        <th id="title">Année de fondation</th>
+        <th id="title">Téléphone</th>
+        <th id="title">Adresse</th>
+        <th id="title">Stade</th>
 
     </tr>
 </thead>
-<tbody style="text-align:center;vertical-align: baseline;">        
+<tbody style="text-align:center">        
     <%@teams.each do |team|%>
         <tr>
-            <td id="table-cell" style="text-align:left">
-                <%=image_tag team["crestUrl"] , size: "45x45"%>
-            </td>
-            <td id="table-cell"><%=team["name"]%></td>
+            <td id="table-cell" style="font-weight:bold" ><%=team["name"]%></td>
+            <td id="table-cell" style="text-align:left"> <%=image_tag team["crestUrl"] , size: "45x45"%></td>
             <td id="table-cell"><%=team["founded"]%></td>
             <td id="table-cell"><%=team["phone"]%></td>
             <td id="table-cell"><%=team["address"]%></td>
