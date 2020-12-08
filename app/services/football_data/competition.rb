@@ -3,7 +3,7 @@ module FootballData
     
 
     def match
-      response = self.class.get('/competitions/2015/matches/', @options)
+      response = self.class.get('/competitions/2015/matches?status=SCHEDULED', @options)
       #response['competitions']
     end
 
