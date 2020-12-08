@@ -1,5 +1,16 @@
-<p>Welcome <%= @email %>!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>Confirme ton compte</h1>
+    <p>Bienvenue <%= @email %>!</p>
 
-<p>You can confirm your account email through the link below:</p>
+<p>Veuillez confirmer votre compte en cliquant sur le lien ci-dessous :</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p><%= link_to 'Confirmer mon compte', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+</body>
+</html>

@@ -1,9 +1,9 @@
 <div class="container"> 
-        <h2 class ="m-2"><%=@teams["name"]%></h1>
+        <h2 class ="m-2"><%=@teams_show["name"]%></h1>
 
     <div class="row mx-0">
         <div class ="col-sm-4 d-flex justify-content-center mb-2">
-        <%=image_tag @teams["crestUrl"] , size: "300x300"%>
+        <%=image_tag @teams_show["crestUrl"] , size: "300x300"%>
         </div>
     <div class="col-sm-8">
         <div class="card rounded-0 box-shadow">
@@ -12,38 +12,38 @@
                     <div class="col-md-6 my-1 ng-star-inserted">
                         <div class="card rounded-0">
                             <div class="card-header bg-lightgrey" style="padding: 0.3rem;">Name</div>
-                            <div class="card-body" style="padding: 0.4rem"><%=@teams["name"]%></div>
+                            <div class="card-body" style="padding: 0.4rem"><%=@teams_show["name"]%></div>
                         </div>
                     
                     </div>
                     <div class="col-md-6 my-1 ng-star-inserted">
                         <div class="card rounded-0">
                             <div class="card-header bg-lightgrey" style="padding: 0.3rem;">Phone</div>
-                            <div class="card-body" style="padding: 0.4rem"><%=@teams["phone"]%></div>
+                            <div class="card-body" style="padding: 0.4rem"><%=@teams_show["phone"]%></div>
                         </div>
                     </div>
                     <div class="col-md-6 my-1 ng-star-inserted">
                         <div class="card rounded-0">
                             <div class="card-header bg-lightgrey" style="padding: 0.3rem;">Website</div>
-                            <div class="card-body" style="padding: 0.4rem"><%=@teams["website"]%></div>
+                            <div class="card-body" style="padding: 0.4rem"><%=@teams_show["website"]%></div>
                         </div>
                     </div>
                     <div class="col-md-6 my-1 ng-star-inserted">
                         <div class="card rounded-0">
                             <div class="card-header bg-lightgrey" style="padding: 0.3rem;">Short Name</div>
-                            <div class="card-body" style="padding: 0.4rem"><%=@teams["shortName"]%></div>
+                            <div class="card-body" style="padding: 0.4rem"><%=@teams_show["shortName"]%></div>
                         </div>
                     </div>
                     <div class="col-md-6 my-1 ng-star-inserted">
                         <div class="card rounded-0">
                             <div class="card-header bg-lightgrey" style="padding: 0.3rem;">Address</div>
-                            <div class="card-body" style="padding: 0.4rem"><%=@teams["address"]%></div>
+                            <div class="card-body" style="padding: 0.4rem"><%=@teams_show["address"]%></div>
                         </div>
                     </div>
                     <div class="col-md-6 my-1 ng-star-inserted">
                         <div class="card rounded-0">
                             <div class="card-header bg-lightgrey" style="padding: 0.3rem;">Email</div>
-                            <div class="card-body" style="padding: 0.4rem"><%=@teams["email"]%></div>
+                            <div class="card-body" style="padding: 0.4rem"><%=@teams_show["email"]%></div>
                         </div>
                     </div>
                 </div>
@@ -62,26 +62,90 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><%=@teams["activeCompetitions"][0]["name"]%></td>
-                    <td><%=@teams["activeCompetitions"][0]["area"]["name"]%></td>
-                    <td><%=@teams["activeCompetitions"][0]["code"]%></td>
+                    <td><%=@teams_show["activeCompetitions"][0]["name"]%></td>
+                    <td><%=@teams_show["activeCompetitions"][0]["area"]["name"]%></td>
+                    <td><%=@teams_show["activeCompetitions"][0]["code"]%></td>
                 </tr>
             </tbody>
 
         </table>
 
     </div>
+
 </div>
 
+<div id="map" class="mx-auto" style="width: 100%"></div>
+
+<!--lat: <%=@new_address[:latitude]%>, lng: <%=@new_address[:longitude]%> 
+Rails.application.credentials.google_maps_api_key
+
+-->
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['google_maps_api_key']%>&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <style type="text/css">
+      #map {
+        height: 500px;
+        width: 60%;
+      }
+    </style>
+
+
+    <script>
+
+function initMap() {
+var location = { lat: <%=@new_address[:latitude]%>, lng: <%=@new_address[:longitude]%> };
+  
+   if(location.lat ==0 && location.lng ==0){
+    var location = { lat: 0, lng: 0 };
+
+   }
+
+ const image = {
+          url: "<%=image_url("ballon_icon.png")%>",
+          // This marker is 20 pixels wide by 32 pixels high.
+          //size: new google.maps.Size(20, 32),
+         // The origin for this image is (0, 0).
+          origin: new google.maps.Point(0, 0),
+          // The anchor for this image is the base of the flagpole at (0, 32).
+          anchor: new google.maps.Point(0, 32),
+        };
+        // Shapes define the clickable region of the icon. The type defines an HTML
+        // <area> element 'poly' which traces out a polygon as a series of X,Y points.
+        // The final coordinate closes the poly by connecting to the first coordinate.
+        const shape = {
+          coords: [1, 1, 1, 20, 18, 20, 18, 1],
+          type: "poly",
+        };
+
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 14,
+    center: location,
+  });
+  const marker = new google.maps.Marker({
+    position: location,
+            map,
+            icon: image,
+            title: "Cliquer pour afficher la page en ligne du club"
+  });
+   marker.addListener("click", () => {
+open("<%=@teams_show["website"]%>");
+  });
+}
+
+    </script>
+
 <!--
-    @teams["name"]
-    @teams["phone"]
-    @teams["website"]
-    @teams["shortName"]
-    @teams["email"]
-    @teams["address"]
-    @teams["crestUrl"]
-    @teams["activeCompetitions"][0]["name"]
-    @teams["activeCompetitions"][0]["code"]
-    @teams["activeCompetitions"][0]["area"]["name"]
+    @teams_show["name"]
+    @teams_show["phone"]
+    @teams_show["website"]
+    @teams_show["shortName"]
+    @teams_show["email"]
+    @teams_show["address"]
+    @teams_show["crestUrl"]
+    @teams_show["activeCompetitions"][0]["name"]
+    @teams_show["activeCompetitions"][0]["code"]
+    @teams_show["activeCompetitions"][0]["area"]["name"]
 -->
