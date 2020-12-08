@@ -8,16 +8,16 @@
 <table class ="table table-bordered shadow p-3 mb-5 bg-white rounded">
 <thead style="text-align:center">
     <tr class="text-center"> 
-            <th scope="col">Round</th>
+            <th scope="col">Journée</th>
         <th scope="col">Date</th>
-        <th scope="col">Status</th>
-        <th scope="col">Home</th>
+        <th scope="col">Statut</th>
+        <th scope="col">Domicile</th>
         <th scope="col">Score</th>
-        <th scope="col">Away</th>
+        <th scope="col">Extérieur</th>
     </tr>
 </thead>
 <tbody style="text-align:center"> 
-       
+
     <%@matchs["matches"].each do |m|%>
         <tr>
             <td><%=m["matchday"]%></td>
