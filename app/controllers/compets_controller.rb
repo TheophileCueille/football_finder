@@ -24,13 +24,9 @@ class CompetsController < ApplicationController
     def show
         @options = { headers: { "X-Auth-Token" => "acc141a28a57413888dd75eab9a28c57" } }
         @teams_show = self.class.get("/teams/#{params[:id]}", @options)
+
         @new_address = Compet.create address: @teams_show["venue"] #faire aussi pour team id 
-        puts "*"*50
-        puts  @new_address.id
-        puts  @new_address.longitude
-        puts  @new_address.latitude
-        puts  @new_address.address
-        puts "*"*50
+
     end
 
  
