@@ -31,6 +31,6 @@ class CompetsController < ApplicationController
         puts  @new_address.latitude
         puts  @new_address.address
         puts "*"*50
-
     end
-end
+
+ 

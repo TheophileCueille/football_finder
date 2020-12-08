@@ -1,10 +1,14 @@
 <div class ="container">
-<h2>Les teams</h2>
+
+<br>
+<h1 style="text-align:center">Les équipes</h1>
+<br>
 
 <p id="adresse"></p>
 
 <table class ="table table-bordered shadow p-3 mb-5 bg-white rounded">
 <thead>
+
     <tr class ="text-center"> 
         <th scope="col">Equipes</th>
         <th scope="col">Nom officiel</th>
@@ -27,6 +31,7 @@
             <td><%=team["phone"]%></td>
             <td><%=team["venue"]%></td>
             <td><a href="/team/<%=team['id']%>" class="btn btn-primary">Voir le stade</a></td>
+
         </tr>
     <%end%>
 
