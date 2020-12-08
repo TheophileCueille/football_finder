@@ -17,8 +17,9 @@
     </tr>
 </thead>
 <tbody style="text-align:center"> 
-
-    <%@matchs["matches"].each do |m|%>
+ 
+    <%binding.pry%>
+    <%@matchs["matchday"]["matches"].each do |m|%>
         <tr>
             <td><%=m["matchday"]%></td>
             <td><%=m["utcDate"]%></td>
@@ -30,7 +31,8 @@
             <td><%=m["awayTeam"]["name"]%></td>
         </tr>
     <%end%>
-
+    <%binding.pry%>
+ 
 </table>
 
 </div>
