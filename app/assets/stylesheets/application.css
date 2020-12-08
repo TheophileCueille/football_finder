@@ -25,3 +25,8 @@
     display: table-cell;
     vertical-align: middle;
    }
+
+   #title {
+    display: table-cell;
+   vertical-align: middle;
+ } 
