@@ -1,11 +1,13 @@
 <div class="container"> 
+
 <br>
 <h1 style="text-align:center">Classement</h1>
 <br>
 
+
 <table class ="table table-bordered shadow p-3 mb-5 bg-white rounded">
     <thead>
-        <tr style="text-align:center"> 
+        <tr> 
             <th scope="col">Position</th>
             <th scope="col">Equipe</th>
             <th scope="col">Matchs</th>
@@ -15,19 +17,19 @@
             <th scope="col">Points</th>
         </tr>
     </thead>
-    <tbody style="text-align:center">        
+    <tbody>        
         <%@standing[0]["table"].each do |stand|%>
             <tr>
-                <td id="table-cell"><%=stand["position"]%></td>
-                <td id="table-cell" style="text-align:left">
+                <td><%=stand["position"]%></td>
+                <td>
                 <%=image_tag stand["team"]["crestUrl"] , size: "50x50"%>
                 <%=stand["team"]["name"]%>
                 </td>
-                <td id="table-cell"><%=stand["playedGames"]%></td>
-                <td id="table-cell"><%=stand["goalsFor"]%></td>
-                <td id="table-cell"><%=stand["won"]%></td>
-                <td id="table-cell"><%=stand["goalDifference"]%></td>
-                <td id="table-cell"><%=stand["points"]%></td>
+                <td><%=stand["playedGames"]%></td>
+                <td><%=stand["goalsFor"]%></td>
+                <td><%=stand["won"]%></td>
+                <td><%=stand["goalDifference"]%></td>
+                <td><%=stand["points"]%></td>
             </tr>
         <%end%>
     </tbody>
