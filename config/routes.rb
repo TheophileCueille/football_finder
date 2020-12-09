@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   #Aficher les teams, les matches, le standing
   get 'teams', to: "compets#teams"
-  get 'match', to: "compets#match"
+  get 'match/', to: "compets#match"
+  get 'match/:id', to: "compets#match"
   get 'standing', to: "compets#standing"
   get '/team/:id', to: 'compets#show'
   get 'orders/new'

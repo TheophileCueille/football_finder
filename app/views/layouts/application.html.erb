@@ -17,9 +17,6 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
 <link href="application.css" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-  </script>
   <%= favicon_link_tag asset_path('ball.png') %>
 </head>
 
@@ -38,7 +35,7 @@
           <a class="nav-link" href="<%=teams_path%>">Teams</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<%=match_path%>">Fixtures</a>
+          <a class="nav-link" href="<%=match_path(id:13)%>">Fixtures</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<%=standing_path%>">Standings</a>
@@ -191,6 +188,9 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
 </body>
 
 </html>
