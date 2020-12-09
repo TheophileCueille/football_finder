@@ -73,4 +73,5 @@ gem 'devise'
 gem 'stripe'
 gem 'table_print'
 gem 'rubocop', '~> 1.5', require: false
-gem 'pug-ruby', '~> 2.0', '>= 2.0.1'
+
+
