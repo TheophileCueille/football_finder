@@ -10,8 +10,8 @@
         <th scope="col">Date</th>
         <th scope="col">Statut</th>
         <th scope="col">Domicile</th>
-        <th scope="col">Score</th>
         <th scope="col">Extérieur</th>
+        <th scope="col">Score</th>
     </tr>
 </thead>
 <tbody style="text-align:center"> 
@@ -19,7 +19,7 @@
     <%@matchs["matches"].each do |m|%>
         <tr>
             <td><%=m["matchday"]%></td>
-            <td><%=m["utcDate"]%></td>
+            <td><%=m['utcDate'].split("T")[0]%></td>
             <td><%=m["status"]%></td>
 
             <td><%=m["homeTeam"]["name"]%></td>
