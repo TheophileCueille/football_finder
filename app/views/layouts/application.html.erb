@@ -50,11 +50,9 @@
 
       <% if user_signed_in? %>
 
-      <ul class="list-unstyled">
-      <li class="nav-item dropdown">
-        <a class="btn btn-secondary dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Profil
-        </a>
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+    Profil
+    </button>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="<%=secret_path%>">Profil</a>
           <a class="dropdown-item" href="<%=destroy_user_session_path%>" data-confirm="Vraiment" data-method="delete">Se déconnecter</a>
@@ -65,7 +63,7 @@
       <% else %>
       <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
-    Action
+    Authentification
   </button>
   <div class="dropdown-menu">
     <a class="dropdown-item" href="<%=new_user_registration_path%>">S'inscrire</a>
