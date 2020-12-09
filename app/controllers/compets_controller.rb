@@ -1,6 +1,4 @@
-
 class CompetsController < ApplicationController
-
 
 
     include HTTParty
@@ -8,9 +6,9 @@ class CompetsController < ApplicationController
     
 
     def match
-        @matchs = FootballData::Competition.new.match
+        @options = { headers: { "X-Auth-Token" => "acc141a28a57413888dd75eab9a28c57" } }
+        @matchs = self.class.get("/competitions/2015/matches?matchday=#{params[:id]}", @options)
         @teams = FootballData::Competition.new.team
-        @elo =20
     end
     
     def teams

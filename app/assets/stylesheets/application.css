@@ -1,9 +1,13 @@
   #table-cell {
-    display: table-cell;
-    vertical-align: middle;
-   }
-
-   #title {
-    display: table-cell;
-    vertical-align: middle;
- } 
+      display: table-cell;
+      vertical-align: middle;
+  }
+  
+  #title {
+      display: table-cell;
+      vertical-align: middle;
+  }
+  
+  ul {
+      list-style-type: none;
+  }
