@@ -82,9 +82,11 @@
 </div>
 <!---->
 
+
 <table class ="table table-bordered shadow p-3 mb-5 bg-white Journéeed">
 <thead>
     <tr class="text-center"> 
+            <th scope="col">Journée</th>
         <th scope="col">Date</th>
         <th scope="col">Statut</th>
         <th scope="col">Domicile</th>
@@ -96,21 +98,19 @@
 
     <%@matchs["matches"].each do |m|%>
         <tr>
+            <td><%=m["matchday"]%></td>
             <td><%=m['utcDate'].split("T")[0]%></td>
             <td><%=m["status"]%></td>
+
             <td><%=m["homeTeam"]["name"]%></td>
-            <td><%=m["score"]["fullTime"]["homeTeam"]%> / <%=m["score"]["fullTime"]["awayTeam"]%></td>
             <td><%=m["awayTeam"]["name"]%></td>
         </tr>
     <%end%>
  
 </table>
+
 </div>
 <!--
 ['matches'][0]['utcDate'].split("T")[0]
- m["matchday"]
- m["status"]
-m["score"]["fullTime"]["homeTeam"]
-m["score"]["fullTime"]["awayTeam"]
--->
 
+-->
