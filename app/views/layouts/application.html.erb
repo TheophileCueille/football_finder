@@ -32,26 +32,24 @@
       <ul class="navbar-nav mr-auto">
 
         <li class="nav-item">
-          <a class="nav-link" href="<%=teams_path%>">Teams</a>
+          <a class="nav-link" href="<%=teams_path%>">Equipes</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<%=match_path(id:13)%>">Fixtures</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<%=standing_path%>">Standings</a>
+          <a class="nav-link" href="<%=standing_path%>">Classement</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<%=orders_new_path%>">Donation</a>
+          <a class="nav-link" href="<%=orders_new_path%>">Faire un don</a>
         </li>
       </ul>
 
       <% if user_signed_in? %>
 
-      <ul class="list-unstyled">
-      <li class="nav-item dropdown">
-        <a class="btn btn-secondary dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Profil
-        </a>
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+    Profil
+    </button>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="<%=secret_path%>">Profil</a>
           <a class="dropdown-item" href="<%=destroy_user_session_path%>" data-confirm="Vraiment" data-method="delete">Se déconnecter</a>
@@ -60,24 +58,32 @@
       </ul>
 
       <% else %>
-
-      <ul class="list-unstyled">
+      <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+    Authentification
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="<%=new_user_registration_path%>">S'inscrire</a>
+    <a class="dropdown-item" href="<%=new_user_session_path%>">Se connecter</a>
+  </div>
+</div>
+     <!-- <ul class="list-unstyled">
       <li class="nav-item dropdown">
-        <a class="btn btn-secondary dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class="btn btn-secondary dropdown-toggle" id="navbarDropdownMenuLink>
           Connexion
-        </a>
+        </div>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="<%=new_user_registration_path%>">S'inscrire</a>
           <a class="dropdown-item" href="<%=new_user_session_path%>">Se connecter</a>
         </div>
       </li>
-      </ul>
+      </ul> -->
       <% end %>
   </nav>
 
   <%= yield %>
   <!-- Footer -->
-<footer class="page-footer font-small blue darken-2 pt-4">
+<footer class="page-footer font-small blue darken-2 pt-3 mt-5">
 
   <!-- Footer Links -->
   <div class="container text-center text-md-left">
@@ -89,10 +95,9 @@
       <div class="col-md-4 mx-auto">
 
         <!-- Content -->
-        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Footer Content</h5>
-        <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-          consectetur
-          adipisicing elit.</p>
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">FootballFinder</h5>
+        <p>FootballFinder c'est l'app indispensable pour tous les fans et joueurs de football.</br>
+        Avec une simple recherche, vous pouvez désormais avoir accès aux matchs autour de chez vous !</p>
 
       </div>
       <!-- Grid column -->
@@ -103,20 +108,20 @@
       <div class="col-md-2 mx-auto">
 
         <!-- Links -->
-        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Liens</h5>
 
         <ul class="list-unstyled">
           <li>
-            <a href="<%=teams_path%>">Teams</a>
+            <a href="<%=teams_path%>">Equipes</a>
           </li>
           <li>
-            <a href="<%=match_path%>">Fixtures</a>
+            <a href="<%=match_path%>">Calendrier-résultats</a>
           </li>
           <li>
-            <a href="<%=standing_path%>">Standings</a>
+            <a href="<%=standing_path%>">Classement</a>
           </li>
           <li>
-            <a href="<%=orders_new_path%>">Donation</a>
+            <a href="<%=orders_new_path%>">Faire un don</a>
           </li>
         </ul>
 
@@ -165,8 +170,8 @@
   <!-- Social buttons -->
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+  <div class="footer-copyright text-center py-3">© 2020 Copyright
+    <a href="https://takearecess.com/"> FootballFinder Corp.</a>
   </div>
   <!-- Copyright -->
 

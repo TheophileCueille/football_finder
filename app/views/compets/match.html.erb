@@ -84,25 +84,39 @@
 <table class ="table table-bordered shadow p-3 mb-5 bg-white rounded">
 <thead>
     <tr class="text-center"> 
+            <th scope="col">Journée</th>
         <th scope="col">Date</th>
+<<<<<<< HEAD
         <th scope="col">Status</th>
         <th scope="col">Owner</th>
         <th scope="col">Score</th>
         <th scope="col">Guest</th>
 
+=======
+        <th scope="col">Statut</th>
+        <th scope="col">Domicile</th>
+        <th scope="col">Extérieur</th>
+        <th scope="col">Score</th>
+>>>>>>> develop
     </tr>
 </thead>
-<tbody>        
+<tbody style="text-align:center"> 
+
     <%@matchs["matches"].each do |m|%>
         <tr>
+            <td><%=m["matchday"]%></td>
             <td><%=m['utcDate'].split("T")[0]%></td>
             <td><%=m["status"]%></td>
+<<<<<<< HEAD
+=======
+
+>>>>>>> develop
             <td><%=m["homeTeam"]["name"]%></td>
             <td><%=m["score"]["fullTime"]["homeTeam"]%> / <%=m["score"]["fullTime"]["awayTeam"]%></td>
             <td><%=m["awayTeam"]["name"]%></td>
         </tr>
     <%end%>
-
+ 
 </table>
 </div>
 <!--

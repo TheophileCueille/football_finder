@@ -27,5 +27,6 @@ class CompetsController < ApplicationController
         @teams_show = self.class.get("/teams/#{params[:id]}", @options)
         @new_address = Compet.create address: @teams_show["venue"] #faire aussi pour team id 
 
+        @new_address = Compet.create address: @teams_show["venue"] #faire aussi pour team id 
     end
 end
