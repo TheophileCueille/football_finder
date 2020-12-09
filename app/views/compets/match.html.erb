@@ -1,17 +1,103 @@
-
-<div class ="container">
-<h2>Les matches</h2>
-
+<div class="container">
+<!-- menu dropdown-->
+<div class="dropdown mx-auto">
+  <ul class="nav navbar-nav">
+    <li class="dropdown show w-75 p-3">
+        <a href="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="true"> Round<b class="caret"></b></a>
+        <ul class="dropdown-menu multi-column columns-4 show w-100">
+          <div class="row">
+            <div class="col-sm-2">
+              <ul class="multi-column-dropdown block">
+                <li><%= link_to  "round #{1}", match_path(id:1)%></li>
+                <li><%= link_to  "round #{2}", match_path(id:2)%></li>
+                <li><%= link_to  "round #{3}", match_path(id:3)%></li>
+                <li class="divider"></li>
+                <li><%= link_to  "round #{4}", match_path(id:4)%></li>
+                <li class="divider"></li>
+                <li><%= link_to  "round #{5}", match_path(id:5)%></li>
+                <li><%= link_to  "round #{6}", match_path(id:6)%></li>
+                <li><%= link_to  "round #{7}", match_path(id:7)%></li>
+                <li><%= link_to  "round #{8}", match_path(id:8)%></li>
+              </ul>
+            </div>
+            <div class="col-sm-2">
+              <ul class="multi-column-dropdown">
+                <li><%= link_to  "round #{9}", match_path(id:9)%></li>
+                <li><%= link_to  "round #{10}", match_path(id:10)%></li>
+                <li><%= link_to  "round #{11}", match_path(id:11)%></li>
+                <li class="divider"></li>
+                <li><%= link_to  "round #{12}", match_path(id:12)%></li>
+                <li class="divider"></li>
+                <li id ="matchday"><%= link_to  "round #{13}", match_path(id:13)%></li>
+                <li><%= link_to  "round #{14}", match_path(id:14)%></li>
+                <li><%= link_to  "round #{15}", match_path(id:15)%></li>
+                <li><%= link_to  "round #{16}", match_path(id:16)%></li>
+              </ul>
+            </div>
+            <div class="col-sm-2">
+              <ul class="multi-column-dropdown">
+                <li><%= link_to  "round #{17}", match_path(id:17)%></li>
+                <li><%= link_to  "round #{18}", match_path(id:18)%></li>
+                <li><%= link_to  "round #{19}", match_path(id:19)%></li>
+                <li class="divider"></li>
+                <li><%= link_to  "round #{20}", match_path(id:20)%></li>
+                <li class="divider"></li>
+                <li><%= link_to  "round #{21}", match_path(id:21)%></li>
+                <li><%= link_to  "round #{22}", match_path(id:22)%></li>
+                <li><%= link_to  "round #{23}", match_path(id:23)%></li>
+                <li><%= link_to  "round #{24}", match_path(id:24)%></li>
+              </ul>
+            </div>
+          <div class="col-sm-2">
+              <ul class="multi-column-dropdown">
+                <li><%= link_to  "round #{25}", match_path(id:25)%></li>
+                <li><%= link_to  "round #{26}", match_path(id:26)%></li>
+                <li><%= link_to  "round #{27}", match_path(id:27)%></li>
+                <li class="divider"></li>
+                <li><%= link_to  "round #{28}", match_path(id:28)%></li>
+                <li class="divider"></li>
+                <li><%= link_to  "round #{29}", match_path(id:29)%></li>
+                <li><%= link_to  "round #{30}", match_path(id:30)%></li>
+                <li><%= link_to  "round #{31}", match_path(id:31)%></li>
+                <li><%= link_to  "round #{32}", match_path(id:32)%></li>
+              </ul>
+            </div>
+            <div class="col-sm-2">
+              <ul class="multi-column-dropdown">
+                <li><%= link_to  "round #{33}", match_path(id:33)%></li>
+                <li><%= link_to  "round #{34}", match_path(id:34)%></li>
+                <li><%= link_to  "round #{35}", match_path(id:35)%></li>
+                <li class="divider"></li>
+                <li><%= link_to  "round #{36}", match_path(id:36)%></li>
+                <li class="divider"></li>
+                <li><%= link_to  "round #{37}", match_path(id:37)%></li>
+                <li><%= link_to  "round #{38}", match_path(id:38)%></li>
+              </ul>
+            </div>
+            </div>
+        </ul>
+    </li>
+          </ul>
+</div>
+<!---->
 
 <table class ="table table-bordered shadow p-3 mb-5 bg-white rounded">
 <thead>
     <tr class="text-center"> 
             <th scope="col">Journée</th>
         <th scope="col">Date</th>
+<<<<<<< HEAD
+        <th scope="col">Status</th>
+        <th scope="col">Owner</th>
+        <th scope="col">Score</th>
+        <th scope="col">Guest</th>
+
+=======
         <th scope="col">Statut</th>
         <th scope="col">Domicile</th>
         <th scope="col">Extérieur</th>
         <th scope="col">Score</th>
+>>>>>>> develop
     </tr>
 </thead>
 <tbody style="text-align:center"> 
@@ -21,16 +107,23 @@
             <td><%=m["matchday"]%></td>
             <td><%=m['utcDate'].split("T")[0]%></td>
             <td><%=m["status"]%></td>
+<<<<<<< HEAD
+=======
 
+>>>>>>> develop
             <td><%=m["homeTeam"]["name"]%></td>
+            <td><%=m["score"]["fullTime"]["homeTeam"]%> / <%=m["score"]["fullTime"]["awayTeam"]%></td>
             <td><%=m["awayTeam"]["name"]%></td>
         </tr>
     <%end%>
  
 </table>
-
 </div>
 <!--
 ['matches'][0]['utcDate'].split("T")[0]
-
+ m["matchday"]
+ m["status"]
+m["score"]["fullTime"]["homeTeam"]
+m["score"]["fullTime"]["awayTeam"]
 -->
+
