@@ -10,7 +10,7 @@ Notre application est disponible sur l'hébergeur Heroku à l'adresse suivante :
 
 ## API
 
-Nous utilisons l'API football-data-org pour accéder aux données des compétitions, des équipes et des matchs. 
+Nous utilisons l'API https://www.football-data.org/ pour accéder aux données des compétitions, des équipes et des matchs. 
 
 ## Auteurs 
 
