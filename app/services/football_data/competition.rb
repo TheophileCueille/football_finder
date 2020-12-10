@@ -1,9 +1,10 @@
 module FootballData
   class Competition < Base
+    
 
     def match
-      response = self.class.get('/competitions/2015/matches/', @options)
-     #response['competitions']
+      response = self.class.get('/competitions/2015/matches?matchday', @options)
+      #response['competitions']
     end
 
     def team
@@ -17,9 +18,16 @@ module FootballData
 
     end
 
+
+  def show
+
+  end
+
+
   end
 end
 
 #FootballData::Competition.new.match
 #FootballData::Competition.new.team
 #FootballData::Competition.new.standing
+#FootballData::Competition.new.show

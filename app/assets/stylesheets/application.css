@@ -1,15 +1,64 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+  #table-cell {
+      display: table-cell;
+      vertical-align: middle;
+  }
+  
+  #title {
+      display: table-cell;
+      vertical-align: middle;
+  }
+  
+  ul {
+      list-style-type: none;
+  }
+  
+  .navbar {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+  }
+  
+  .dropdown-menu {
+      min-width: 200px;
+  }
+  
+  .dropdown-menu.columns-2 {
+      min-width: 400px;
+  }
+  
+  .dropdown-menu.columns-3 {
+      min-width: 600px;
+  }
+  
+  .dropdown-menu li a {
+      padding: 5px 15px;
+      font-weight: 300;
+  }
+  
+  .multi-column-dropdown {
+      list-style: none;
+      margin: 0px;
+      padding: 0px;
+  }
+  
+  .multi-column-dropdown li a {
+      display: block;
+      clear: both;
+      line-height: 1.428571429;
+      color: #333;
+      white-space: normal;
+  }
+  
+  .multi-column-dropdown li a:hover {
+      text-decoration: none;
+      color: #262626;
+      background-color: #a6c;
+  }
+  
+  @media (max-width: 767px) {
+      .dropdown-menu.multi-column {
+          min-width: 240px !important;
+          overflow-x: hidden;
+      }
+  }

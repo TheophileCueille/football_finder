@@ -1,3 +1,22 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+<h1>Bienvenue sur FootballFinder ! </h1>
+<p>Grâce à notre application vous avez la possibilité de trouver en quelques clics des rencontres de football, près de chez vous et partout en France.</p>
+<br>
+<p>Champion's League, Europa League, Premier League, Serie A, Bundesliga, Ligue 2 et coupes nationales, autant de compétitions qui seront prochainement ajoutées à notre application en plus de la Ligue 1 ! Restez connectés !</p>
+<br>
+<h2>FootballFinder c'est : </h2>
+<ul>
+    <li>La liste des rencontres de la saison</li>
+    <li>Le classement</li>
+    <li>La liste des équipes avec les informations de chaque club</li>
+</ul>
+<br>
+<h2>Comment ça fonctionne ?</h2>
+<br>
+<ul>
+    <li>Créez-vous un compte</li>
+    <li>Modifiez votre profil pour ajouter l'adresse de votre domicile</li>
+    <li>Accéder à tous les informations de la Ligue 1 (classement, rencontres, liste des équipes)</li>
+    <li>Sélectionner la date que vous souhaitez depuis la page Home pour obtenir sur une carte la liste des rencontres à cette date</li>
+</ul>
+<br>
+<p>Pour profiter pleinement des fonctionnalités de notre outil FootballFinder, inscrivez-vous dès maintenant : <%= link_to  "Connecte toi", new_user_registration_path%></p>
