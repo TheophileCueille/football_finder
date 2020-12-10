@@ -17,7 +17,6 @@ class OrdersController < ApplicationController
     charge = Stripe::Charge.create({
     customer: customer.id,
     amount: @stripe_amount,
-    description: "Achat d'un produit",
     currency: 'eur',
     })
   rescue Stripe::CardError => e
