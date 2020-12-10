@@ -5,7 +5,6 @@ module FootballData
     def match
       response = self.class.get('/competitions/2015/matches?matchday', @options)
       #response['competitions']
-
     end
 
     def team
