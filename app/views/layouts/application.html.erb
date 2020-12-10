@@ -5,7 +5,7 @@
   <title>FootballFinder</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
@@ -17,7 +17,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
   <link href="application.css" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
   </script>
   <%= favicon_link_tag asset_path('ball.png') %>
@@ -46,31 +46,30 @@
         <li class="nav-item">
           <a class="nav-link" href="<%=orders_new_path%>">Faire un don</a>
         </li>
-      </ul>
-
-      <% if user_signed_in? %>
-
-      <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
-    Profil
-    </button>
+</ul>
+        <% if user_signed_in? %>
+        <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">Profil</button>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="<%=secret_path%>">Profil</a>
-          <a class="dropdown-item" href="<%=destroy_user_session_path%>" data-confirm="Vraiment" data-method="delete">Se déconnecter</a>
+          <a class="dropdown-item" href="<%=destroy_user_session_path%>" data-confirm="Vraiment" data-method="delete">Se
+            déconnecter</a>
         </div>
-      </li>
-      </ul>
+        </div>
+        
+      
 
       <% else %>
       <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
-    Authentification
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="<%=new_user_registration_path%>">S'inscrire</a>
-    <a class="dropdown-item" href="<%=new_user_session_path%>">Se connecter</a>
-  </div>
-</div>
-     <!-- <ul class="list-unstyled">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+          Authentification
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="<%=new_user_registration_path%>">S'inscrire</a>
+          <a class="dropdown-item" href="<%=new_user_session_path%>">Se connecter</a>
+        </div>
+      </div>
+      <!-- <ul class="list-unstyled">
       <li class="nav-item dropdown">
         <div class="btn btn-secondary dropdown-toggle" id="navbarDropdownMenuLink>
           Connexion
@@ -86,99 +85,100 @@
 
   <%= yield %>
   <!-- Footer -->
-<footer class="page-footer font-small blue darken-2 pt-3 mt-5 w-100">
+  <footer class="page-footer font-small blue darken-2 pt-3 mt-5 w-100">
 
-  <!-- Footer Links -->
-  <div class="container text-center text-md-left">
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left w-100">
 
-    <!-- Grid row -->
-    <div class="row">
+      <!-- Grid row -->
+      <div class="row">
 
-      <!-- Grid column -->
-      <div class="col-md-4 mx-auto">
+        <!-- Grid column -->
+        <div class="col-md-4 mx-auto">
 
-        <!-- Content -->
-        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">FootballFinder</h5>
-        <p>FootballFinder c'est l'app indispensable pour tous les fans et joueurs de football.</br>
-        Avec une simple recherche, vous pouvez désormais avoir accès aux matchs autour de chez vous !</p>
+          <!-- Content -->
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">FootballFinder</h5>
+          <p>FootballFinder c'est l'app indispensable pour tous les fans et joueurs de football.</br>
+            Avec une simple recherche, vous pouvez désormais avoir accès aux matchs autour de chez vous !</p>
+
+        </div>
+        <!-- Grid column -->
+
+        <hr class="clearfix w-100 d-md-none">
+
+        <!-- Grid column -->
+        <div class="col-md-2 mx-auto">
+
+          <!-- Links -->
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Liens</h5>
+
+          <ul class="list-unstyled">
+            <li>
+              <a href="<%=teams_path%>">Equipes</a>
+            </li>
+            <li>
+              <a href="<%=match_path%>">Calendrier-résultats</a>
+            </li>
+            <li>
+              <a href="<%=standing_path%>">Classement</a>
+            </li>
+            <li>
+              <a href="<%=orders_new_path%>">Faire un don</a>
+            </li>
+          </ul>
+
+        </div>
+
+        <!-- Grid column -->
 
       </div>
-      <!-- Grid column -->
-
-      <hr class="clearfix w-100 d-md-none">
-
-      <!-- Grid column -->
-      <div class="col-md-2 mx-auto">
-
-        <!-- Links -->
-        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Liens</h5>
-
-        <ul class="list-unstyled">
-          <li>
-            <a href="<%=teams_path%>">Equipes</a>
-          </li>
-          <li>
-            <a href="<%=match_path%>">Calendrier-résultats</a>
-          </li>
-          <li>
-            <a href="<%=standing_path%>">Classement</a>
-          </li>
-          <li>
-            <a href="<%=orders_new_path%>">Faire un don</a>
-          </li>
-        </ul>
-
-      </div>
-
-      <!-- Grid column -->
+      <!-- Grid row -->
 
     </div>
-    <!-- Grid row -->
+    <!-- Footer Links -->
 
-  </div>
-  <!-- Footer Links -->
+    <!-- Call to action -->
 
-  <!-- Call to action -->
+    <hr>
 
-  <hr>
+    <!-- Social buttons -->
+    <ul class="list-unstyled list-inline text-center">
+      <li class="list-inline-item">
+        <a class="btn-floating btn-fb mx-1">
+          <i class="fab fa-facebook-f"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-tw mx-1">
+          <i class="fab fa-twitter"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-gplus mx-1">
+          <i class="fab fa-google-plus-g"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-li mx-1">
+          <i class="fab fa-linkedin-in"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-dribbble mx-1">
+          <i class="fab fa-dribbble"> </i>
+        </a>
+      </li>
+    </ul>
+    <!-- Social buttons -->
 
-  <!-- Social buttons -->
-  <ul class="list-unstyled list-inline text-center">
-    <li class="list-inline-item">
-      <a class="btn-floating btn-fb mx-1">
-        <i class="fab fa-facebook-f"> </i>
-      </a>
-    </li>
-    <li class="list-inline-item">
-      <a class="btn-floating btn-tw mx-1">
-        <i class="fab fa-twitter"> </i>
-      </a>
-    </li>
-    <li class="list-inline-item">
-      <a class="btn-floating btn-gplus mx-1">
-        <i class="fab fa-google-plus-g"> </i>
-      </a>
-    </li>
-    <li class="list-inline-item">
-      <a class="btn-floating btn-li mx-1">
-        <i class="fab fa-linkedin-in"> </i>
-      </a>
-    </li>
-    <li class="list-inline-item">
-      <a class="btn-floating btn-dribbble mx-1">
-        <i class="fab fa-dribbble"> </i>
-      </a>
-    </li>
-  </ul>
-  <!-- Social buttons -->
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright
+      <a href="https://takearecess.com/"> FootballFinder Corp.</a>
+    </div>
+    <!-- Copyright -->
 
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright
-    <a href="https://takearecess.com/"> FootballFinder Corp.</a>
-  </div>
-  <!-- Copyright -->
+  </footer>
 
-</footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
   </script>
