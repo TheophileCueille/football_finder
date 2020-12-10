@@ -56,7 +56,7 @@ Rails.application.configure do
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
 
-  config.action_mailer.default_url_options = { :host => 'https://foot-develop.herokuapp.com'}
+  config.action_mailer.default_url_options = { :host => ENV['MAILER_HOST']}
   #config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # Use a different cache store in production.
