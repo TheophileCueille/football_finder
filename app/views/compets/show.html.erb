@@ -1,7 +1,8 @@
+
 <div class="container"> 
         <h2 class ="m-2"><%=@teams_show["name"]%></h1>
 
-    <div class="row mx-0">
+    <div class="row"> 
         <div class ="col-sm-4 d-flex justify-content-center mb-2">
         <%=image_tag @teams_show["crestUrl"] , size: "300x300"%>
         </div>
@@ -71,8 +72,10 @@
         </table>
 
     </div>
-
+    </div>
+    </div>
 </div>
+
 
 <div id="map" class="mx-auto" style="width: 100%"></div>
 
@@ -93,7 +96,7 @@ Rails.application.credentials.google_maps_api_key
     </style>
 
 
-  <script>
+<script>
 
 function initMap() {
 var location = { lat: <%=@new_address[:latitude]%>, lng: <%=@new_address[:longitude]%> };
@@ -135,9 +138,9 @@ var stades = [
     marker.addListener("click", () => {
     open("<%=@teams_show["website"]%>");
     });
-}
 
-    </script>
+
+</script>
 
 <!--
     @teams_show["name"]
@@ -151,3 +154,4 @@ var stades = [
     @teams_show["activeCompetitions"][0]["code"]
     @teams_show["activeCompetitions"][0]["area"]["name"]
 -->
+
