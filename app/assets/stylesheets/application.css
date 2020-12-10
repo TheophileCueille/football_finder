@@ -62,3 +62,8 @@
           overflow-x: hidden;
       }
   }
+
+
+  html, body {
+    height:100%;
+}
