@@ -1,4 +1,3 @@
-
 <h1>Bienvenue sur FootballFinder ! </h1>
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
@@ -27,37 +26,120 @@
 <br>
 <h2>FootballFinder c'est : </h2>
 <ul>
-    <li>La liste des rencontres de la saison</li>
-    <li>Le classement</li>
-    <li>La liste des équipes avec les informations de chaque club</li>
+    La liste des rencontres de la saison
+    Le classement
+    La liste des équipes avec les informations de chaque club
 </ul>
 <br>
 <h2>Comment ça fonctionne ?</h2>
 <br>
 <ul>
-    <li>Créez-vous un compte</li>
-    <li>Modifiez votre profil pour ajouter l'adresse de votre domicile</li>
-    <li>Accéder à tous les informations de la Ligue 1 (classement, rencontres, liste des équipes)</li>
-    <li>Sélectionner la date que vous souhaitez depuis la page Home pour obtenir sur une carte la liste des rencontres à cette date</li>
+    Créez-vous un compte
+    Modifiez votre profil pour ajouter l'adresse de votre domicile
+    Accéder à tous les informations de la Ligue 1 (classement, rencontres, liste des équipes)
+    Sélectionner la date que vous souhaitez depuis la page Home pour obtenir sur une carte la liste des rencontres à cette date
 </ul>
 <br>
 <p>Pour profiter pleinement des fonctionnalités de notre outil FootballFinder, inscrivez-vous dès maintenant : <%= link_to  "Connecte toi", new_user_registration_path%></p>
 
+<% if user_signed_in? %>
+<!---->
+<h1 class="text-center"> Journée <%=params[:id]%></h1>
+<div class="container">
+    <div class="dropdown show dropright">
+        <a class="btn btn-secondary dropdown-toggle  dropright" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Jour de match
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <div class="row">
+                <div class="col-sm-2">
+                    <ul class="multi-column-dropdown block">
+                        <li><%= link_to  "Journée #{1}", root_path(id:1)%></li>
+                        <li><%= link_to  "Journée #{2}", root_path(id:2)%></li>
+                        <li><%= link_to  "Journée #{3}", root_path(id:3)%></li>
+                        <li class="divider"></li>
+                        <li><%= link_to  "Journée #{4}", root_path(id:4)%></li>
+                        <li class="divider"></li>
+                        <li><%= link_to  "Journée #{5}", root_path(id:5)%></li>
+                        <li><%= link_to  "Journée #{6}", root_path(id:6)%></li>
+                        <li><%= link_to  "Journée #{7}", root_path(id:7)%></li>
+                        <li><%= link_to  "Journée #{8}", root_path(id:8)%></li>
+                    </ul>
+                    </div>
+                    <div class="col-sm-2">
+                    <ul class="multi-column-dropdown">
+                        <li><%= link_to  "Journée #{9}", root_path(id:9)%></li>
+                        <li><%= link_to  "Journée #{10}", root_path(id:10)%></li>
+                        <li><%= link_to  "Journée #{11}", root_path(id:11)%></li>
+                        <li class="divider"></li>
+                        <li><%= link_to  "Journée #{12}", root_path(id:12)%></li>
+                        <li class="divider"></li>
+                        <li id ="matchday"><%= link_to  "Journée #{13}", root_path(id:13)%></li>
+                        <li><%= link_to  "Journée #{14}", root_path(id:14)%></li>
+                        <li><%= link_to  "Journée #{15}", root_path(id:15)%></li>
+                        <li><%= link_to  "Journée #{16}", root_path(id:16)%></li>
+                    </ul>
+                    </div>
+                    <div class="col-sm-2">
+                    <ul class="multi-column-dropdown">
+                        <li><%= link_to  "Journée #{17}", root_path(id:17)%></li>
+                        <li><%= link_to  "Journée #{18}", root_path(id:18)%></li>
+                        <li><%= link_to  "Journée #{19}", root_path(id:19)%></li>
+                        <li class="divider"></li>
+                        <li><%= link_to  "Journée #{20}", root_path(id:20)%></li>
+                        <li class="divider"></li>
+                        <li><%= link_to  "Journée #{21}", root_path(id:21)%></li>
+                        <li><%= link_to  "Journée #{22}", root_path(id:22)%></li>
+                        <li><%= link_to  "Journée #{23}", root_path(id:23)%></li>
+                        <li><%= link_to  "Journée #{24}", root_path(id:24)%></li>
+                    </ul>
+                    </div>
+                <div class="col-sm-2">
+                    <ul class="multi-column-dropdown">
+                        <li><%= link_to  "Journée #{25}", root_path(id:25)%></li>
+                        <li><%= link_to  "Journée #{26}", root_path(id:26)%></li>
+                        <li><%= link_to  "Journée #{27}", root_path(id:27)%></li>
+                        <li class="divider"></li>
+                        <li><%= link_to  "Journée #{28}", root_path(id:28)%></li>
+                        <li class="divider"></li>
+                        <li><%= link_to  "Journée #{29}", root_path(id:29)%></li>
+                        <li><%= link_to  "Journée #{30}", root_path(id:30)%></li>
+                        <li><%= link_to  "Journée #{31}", root_path(id:31)%></li>
+                        <li><%= link_to  "Journée #{32}", root_path(id:32)%></li>
+                    </ul>
+                    </div>
+                    <div class="col-sm-2">
+                    <ul class="multi-column-dropdown">
+                        <li><%= link_to  "Journée #{33}", root_path(id:33)%></li>
+                        <li><%= link_to  "Journée #{34}", root_path(id:34)%></li>
+                        <li><%= link_to  "Journée #{35}", root_path(id:35)%></li>
+                        <li class="divider"></li>
+                        <li><%= link_to  "Journée #{36}", root_path(id:36)%></li>
+                        <li class="divider"></li>
+                        <li><%= link_to  "Journée #{37}", root_path(id:37)%></li>
+                        <li><%= link_to  "Journée #{38}", root_path(id:38)%></li>
+                    </ul>
+                    </div>
+                </div>
+    </div>
+</div>
+
+<!---->
 <div class ="container">
 
     <div id="map" class="mx-auto" style="width: 100%"></div>
 
 </div>
 
-<%@matchs["matches"].each do |m, i|%>
+<%@matchs["matches"].each do |m|%>
     
-    <%@stades << Geocoder.coordinates(@teams_stades[m["homeTeam"]["name"].to_sym])%>
-    <%@stades%>
-    
+<%@stades << Geocoder.coordinates(@teams_stades[m["homeTeam"]["name"].to_sym])%>
+
 <%end%>
 
 
 <!--
+@stades << [Geocoder.coordinates(@teams_stades[m["homeTeam"]["name"].to_sym]),m["homeTeam"]["name"]]
 @matchs["matches"]["homeTeam"]["name"]
 Geocoder.coordinates(@stades[0])
 @teams_stades[m["homeTeam"]["name"].to_sym]
@@ -76,15 +158,15 @@ Geocoder.coordinates(@stades[0])
 
 <script>
 var stade_matchs= <%=@stades%>
-
+console.log("salut")
 function initMap() {
 var location = { lat: 47.32639637059186, lng: 2.3237934192128806};
 
     const image = {
-            url: "<%=image_url("stade_foot.png")%>",
+            url: "<%=image_url("stadium.png")%>",
             //size: new google.maps.Size(20, 32),
             origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(5, 5),
+            anchor: new google.maps.Point(0, 0),
             };
             
     const shape = {
@@ -113,3 +195,4 @@ var location = { lat: 47.32639637059186, lng: 2.3237934192128806};
 
     </script>
 
+<%end%>
