@@ -62,7 +62,6 @@
           overflow-x: hidden;
       }
   }
-<<<<<<< HEAD
   
   .match-table:hover {
       background-color: #a6c;
@@ -105,10 +104,8 @@
       flex: 1;
       z-index: 1;
   }
-=======
 
 
   html, body {
     height:100%;
 }
->>>>>>> develop
