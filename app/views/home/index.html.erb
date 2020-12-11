@@ -110,15 +110,15 @@
 
 </div>
 
-<%@matchs["matches"].each do |m, i|%>
+<%@matchs["matches"].each do |m|%>
     
-    <%@stades << Geocoder.coordinates(@teams_stades[m["homeTeam"]["name"].to_sym])%>
-    <%@stades%>
-    
+<%@stades << Geocoder.coordinates(@teams_stades[m["homeTeam"]["name"].to_sym])%>
+
 <%end%>
 
 
 <!--
+@stades << [Geocoder.coordinates(@teams_stades[m["homeTeam"]["name"].to_sym]),m["homeTeam"]["name"]]
 @matchs["matches"]["homeTeam"]["name"]
 Geocoder.coordinates(@stades[0])
 @teams_stades[m["homeTeam"]["name"].to_sym]
@@ -137,15 +137,15 @@ Geocoder.coordinates(@stades[0])
 
 <script>
 var stade_matchs= <%=@stades%>
-
+console.log("salut")
 function initMap() {
 var location = { lat: 47.32639637059186, lng: 2.3237934192128806};
 
     const image = {
-            url: "<%=image_url("stade_foot.png")%>",
+            url: "<%=image_url("stadium.png")%>",
             //size: new google.maps.Size(20, 32),
             origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(5, 5),
+            anchor: new google.maps.Point(0, 0),
             };
             
     const shape = {
