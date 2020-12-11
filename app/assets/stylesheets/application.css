@@ -109,3 +109,17 @@
   html, body {
     height:100%;
 }
+
+.stripe-pay{
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+background-color: aliceblue;
+border: solid;
+border-width: 1px;
+border-color: black;
+border-radius: 5%;
+width: 150px;
+height: 80px;
+}
