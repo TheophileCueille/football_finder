@@ -28,4 +28,3 @@ class CompetsController < ApplicationController
     end
 end
 
- 
