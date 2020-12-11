@@ -5,7 +5,7 @@
   <ul class="nav navbar-nav">
     <li class="dropdown show w-75 p-3">
         <a href="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="true"> Journée<b class="caret"></b></a>
-        <ul class="dropdown-menu multi-column columns-4 show w-100">
+        <ul class="dropdown-menu multi-column columns-4 show w-75">
           <div class="row">
             <div class="col-sm-2">
               <ul class="multi-column-dropdown block">
@@ -87,6 +87,7 @@
 
 
 <table class ="table table-bordered shadow p-3 mb-5 bg-white rounded">
+  
 <thead>
     <tr class="text-center"> 
         <th scope="col">Date</th>
@@ -102,15 +103,22 @@
         <tr>
             <td><%=m['utcDate'].split("T")[0]%></td>
             <td><%=m["status"]%></td>
-            <td><%=m["homeTeam"]["name"]%></td>
-            <td><%=m["score"]["fullTime"]["homeTeam"]%> / <%=m["score"]["fullTime"]["awayTeam"]%></td>
-            <td><%=m["awayTeam"]["name"]%></td>
+            <td class="match-table"><a href="/team/<%=m["homeTeam"]["id"]%>" class="text-dark font-weight-light"><%=m["homeTeam"]["name"]%></a></td>
+            <td class="font-weight-bold d-flex" style="position: relative;">
+            <div class="header">
+              <span class="headerMiddle"><%=m["score"]["fullTime"]["homeTeam"]%> / <%=m["score"]["fullTime"]["awayTeam"]%></span>
+            </div>
+            </td>
+            <td class="match-table"><a href="/team/<%=m["awayTeam"]["id"]%>" class="text-dark font-weight-light"><%=m["awayTeam"]["name"]%></a></td>
         </tr>
     <%end%>
  
 </table>
 </div>
 <!--
+@teams[0]["id"]
+m["homeTeam"]["id"]
+m["awayTeam"]["id"]
 ['matches'][0]['utcDate'].split("T")[0]
  m["matchday"]
  m["status"]

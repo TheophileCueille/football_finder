@@ -1,3 +1,4 @@
+
 <h1>Bienvenue sur FootballFinder ! </h1>
 <p>Grâce à notre application vous avez la possibilité de trouver en quelques clics des rencontres de football, près de chez vous et partout en France.</p>
 <br>
@@ -20,3 +21,74 @@
 </ul>
 <br>
 <p>Pour profiter pleinement des fonctionnalités de notre outil FootballFinder, inscrivez-vous dès maintenant : <%= link_to  "Connecte toi", new_user_registration_path%></p>
+
+<div class ="container">
+
+    <div id="map" class="mx-auto" style="width: 100%"></div>
+
+</div>
+
+<%@matchs["matches"].each do |m, i|%>
+    
+    <%@stades << Geocoder.coordinates(@teams_stades[m["homeTeam"]["name"].to_sym])%>
+    <%@stades%>
+    
+<%end%>
+
+
+<!--
+@matchs["matches"]["homeTeam"]["name"]
+Geocoder.coordinates(@stades[0])
+@teams_stades[m["homeTeam"]["name"].to_sym]
+-->
+
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['google_maps_api_key']%>&callback=initMap&libraries=&v=weekly"
+    defer
+    ></script>
+    <style type="text/css">
+    #map {
+        height: 500px;
+        width: 60%;
+    }
+    </style>
+
+<script>
+var stade_matchs= <%=@stades%>
+
+function initMap() {
+var location = { lat: 47.32639637059186, lng: 2.3237934192128806};
+
+    const image = {
+            url: "<%=image_url("stade_foot.png")%>",
+            //size: new google.maps.Size(20, 32),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(5, 5),
+            };
+            
+    const shape = {
+            coords: [1, 1, 1, 20, 18, 20, 18, 1],
+            type: "poly",
+            };
+
+    const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 5,
+        center: location,
+    });
+
+    for (let i = 0; i < stade_matchs.length; i++) {
+        const stades = stade_matchs[i];
+        new google.maps.Marker({
+            position: { lat: stades[0], lng: stades[1] },
+            map,
+            icon: image,
+            shape: shape,
+        });
+    }
+
+
+}
+
+
+    </script>
+
