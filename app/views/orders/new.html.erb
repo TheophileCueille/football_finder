@@ -4,8 +4,8 @@
   <br>
 
   <p></p>
-
-  <div style="text-align:center">
+<div style="text-align:center;display:flex;justify-content:center">
+  <div class="stripe-pay">
     <%= form_tag orders_path do %>
     <article>
       <% if flash[:error].present? %>
@@ -22,9 +22,13 @@
       data-description="Faites un don pour nous soutenir !" data-amount="500" data-currency="eur" data-locale="auto">
       data - label = "Donate"
     </script>
-
+      </div>
+      </div>
+      <br>
+<p style="text-align:center">Vous vous demandez sûrement le pourquoi du comment de cette page ?
+Faire un don à FootballFinder, mais pourquoi faire ? Qu'est-ce que j'y gagne ? Une place pour aller voir un match ? Une pinte de 86 ? Que nenni Il n'en est rien
+En effet la page FootballFinder a été réalisée de manière totalement bénévole et comme vous pouvez le constater aucune publicité ne vient altérer votre expérience utilisateur.
+Votre don nous permettrait donc de pouvoir continuer à maintenir le site à jour et vous proposer à l'avenir toujours plus de fonctionnalités !
+</p>
     <% end %>
-  </div>
-  <br>
-  <br>
 </div>
