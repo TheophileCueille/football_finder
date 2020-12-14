@@ -1,4 +1,4 @@
-<h1>Bienvenue sur FootballFinder ! </h1>
+<!-- Carousel -->
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -20,31 +20,62 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-<p>Grâce à notre application vous avez la possibilité de trouver en quelques clics des rencontres de football, près de chez vous et partout en France.</p>
-<br>
-<p>Champion's League, Europa League, Premier League, Serie A, Bundesliga, Ligue 2 et coupes nationales, autant de compétitions qui seront prochainement ajoutées à notre application en plus de la Ligue 1 ! Restez connectés !</p>
-<br>
-<h2>FootballFinder c'est : </h2>
-<ul>
-    La liste des rencontres de la saison
-    Le classement
-    La liste des équipes avec les informations de chaque club
-</ul>
-<br>
-<h2>Comment ça fonctionne ?</h2>
-<br>
-<ul>
-    Créez-vous un compte
-    Modifiez votre profil pour ajouter l'adresse de votre domicile
-    Accéder à tous les informations de la Ligue 1 (classement, rencontres, liste des équipes)
-    Sélectionner la date que vous souhaitez depuis la page Home pour obtenir sur une carte la liste des rencontres à cette date
-</ul>
-<br>
-<p>Pour profiter pleinement des fonctionnalités de notre outil FootballFinder, inscrivez-vous dès maintenant : <%= link_to  "Connecte toi", new_user_registration_path%></p>
+<h1 class="text-center mt-3">Bienvenue sur FootballFinder ! </h1>
+
+
+<!--Comment utiliser FootballFinder -->
+<hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading mb-4">Comment ça fonctionne ?</h2>
+        <p class="lead">Commencez par vous créer un compte.<br>
+        Modifiez votre profil pour ajouter l'adresse de votre domicile.<span class="text-muted">Si vous le souhaitez bien sûr</span><br>
+        Sélectionner la journée souhaitée depuis la page d'accueil pour obtenir sur une carte la liste des rencontres à suivre durant la journée.</p>
+      </div>
+      <div class="col-md-5">
+        <%= image_tag 'screen01.png', size: '600x600', class: "bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"  %>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading mb-4">Consultez les matchs selon les journées.<br><span class="text-muted"> Et bien plus encore !</span></h2>
+        <p class="lead">Grâce à notre application vous avez la possibilité de trouver en quelques clics des rencontres de football, près de chez vous et partout en France.<br>
+        Vous pouvez aussi accéder à tous les informations de la Ligue 1 (classement, rencontres, liste des équipes).</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <%= image_tag 'screen02.png', size: '600x600', class: "bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"  %>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading mb-4">En bref FootballFinder c'est: <span class="text-muted">trop cool !</span></h2>
+        <p class="lead">Non plus sérieusement c'est le site ou tu peux consulter la liste des rencontres de la saison, le classement, la liste des équipes avec les informations de chaque club.<br>
+        Champion's League, Europa League, Premier League, Serie A, Bundesliga, Ligue 2 et coupes nationales, autant de compétitions qui seront prochainement ajoutées à notre application en plus de la Ligue 1 !<br>
+        Restez connectés !</p>
+      </div>
+      <div class="col-md-5">
+              <%= image_tag 'screen03.png', size: '600x600', class: "bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" %>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
+
+
 
 <% if user_signed_in? %>
-<!---->
 <h1 class="text-center"> Journée <%=params[:id]%></h1>
+<div class="">
     <div class="dropdown show dropright">
         <a class="btn btn-secondary dropdown-toggle ml-5 dropright" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Jour de match
@@ -135,6 +166,7 @@
     
 <%@stades << Geocoder.coordinates(@teams_stades[m["homeTeam"]["name"].to_sym])%>
 
+
 <%end%>
 
 
@@ -189,10 +221,7 @@ var location = { lat: 47.32639637059186, lng: 2.3237934192128806};
         });
     }
 }
-///////////////////////////
-
-//////////////////////////
-
     </script>
-
+<%else%>
+<p class="lead">Pour profiter pleinement des fonctionnalités de notre outil FootballFinder, inscrivez-vous dès maintenant : <%= link_to  "Connecte toi", new_user_registration_path%></p>
 <%end%>
