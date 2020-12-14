@@ -77,7 +77,7 @@
 <h1 class="text-center"> Journée <%=params[:id]%></h1>
 <div class="">
     <div class="dropdown show dropright">
-        <a class="btn btn-secondary dropdown-toggle  dropright" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="btn btn-secondary dropdown-toggle ml-5 dropright" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Jour de match
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -152,13 +152,14 @@
                     </div>
                 </div>
     </div>
-</div>
 
 <!---->
 <div class ="container">
 
     <div id="map" class="mx-auto" style="width: 100%"></div>
 
+</div>
+<div>
 </div>
 
 <%@matchs["matches"].each do |m|%>
@@ -189,7 +190,7 @@ Geocoder.coordinates(@stades[0])
 
 <script>
 var stade_matchs= <%=@stades%>
-console.log("salut")
+console.log(stade_matchs)
 function initMap() {
 var location = { lat: 47.32639637059186, lng: 2.3237934192128806};
 
@@ -219,11 +220,7 @@ var location = { lat: 47.32639637059186, lng: 2.3237934192128806};
             shape: shape,
         });
     }
-
-
 }
-
-
     </script>
 <%else%>
 <p class="lead">Pour profiter pleinement des fonctionnalités de notre outil FootballFinder, inscrivez-vous dès maintenant : <%= link_to  "Connecte toi", new_user_registration_path%></p>
