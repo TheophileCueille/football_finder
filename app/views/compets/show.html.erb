@@ -1,8 +1,7 @@
-
 <div class="container"> 
         <h2 class ="m-2"><%=@teams_show["name"]%></h1>
 
-    <div class="row"> 
+    <div class="row mx-0">
         <div class ="col-sm-4 d-flex justify-content-center mb-2">
         <%=image_tag @teams_show["crestUrl"] , size: "300x300"%>
         </div>
@@ -72,8 +71,7 @@
         </table>
 
     </div>
-    </div>
-    </div>
+
 </div>
 
 
@@ -95,13 +93,12 @@ Rails.application.credentials.google_maps_api_key
       }
     </style>
 
-
 <script>
 
 function initMap() {
 var location = { lat: <%=@new_address[:latitude]%>, lng: <%=@new_address[:longitude]%> };
 
-
+        
 var stades = [
     ["Stade Brestois 29", -4.492127, 48.4012202, 4],
     ["Olympique de Marseille", 5.4613514, 43.3015717, 5],
@@ -110,7 +107,7 @@ var stades = [
     ["OGC Nice", 7.2584159, 43.7241823, 1],
 ];
     const image = {
-            url: "<%=image_url("stadium.png")%>",
+            url: "<%=image_url("stade_foot.png")%>",
             //size: new google.maps.Size(20, 32),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(5, 5),
@@ -124,6 +121,8 @@ var stades = [
     const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 5,
         center: location,
+        mapTypeId: "roadmap",
+
     });
 
         const marker = new google.maps.Marker({
@@ -140,7 +139,9 @@ var stades = [
     });
 }
 
+
 </script>
+
 
 <!--
     @teams_show["name"]
@@ -154,4 +155,3 @@ var stades = [
     @teams_show["activeCompetitions"][0]["code"]
     @teams_show["activeCompetitions"][0]["area"]["name"]
 -->
-
